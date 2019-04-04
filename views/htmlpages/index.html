@@ -72,7 +72,6 @@
                 <div class="row">
                     <h1>Register</h1>
                 </div>
-
                 <div class="row">
                     <div class="col-sm">
                         <div class="form-group">
@@ -94,13 +93,11 @@
                             <input type="lastName" class="form-control lastName" placeholder="Enter Last Name">
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                        <div class="form-group">
-                                <label for="studentID">Student ID</label>
-                                <input type="studentID" class="form-control password" placeholder="Enter Student ID">
-                            </div>
                     <div class="col-sm">
+                        <div class="form-group">
+                            <label for="studentID">Student ID</label>
+                            <input type="studentID" class="form-control password" placeholder="Enter Student ID">
+                        </div>
                         <button type="submit" class="btn btn-primary submit">Register</button>
                     </div>
                 </div>
@@ -142,6 +139,7 @@
 <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
+        event.preventDefault();
         displayLogin();
         // Function to run when user clicks Register button in navbar
         $("#navRegister").click(displayRegister);
