@@ -1,17 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
-  var Individual = sequelize.define("Individual", {
-    name: {
+  var Assignment = sequelize.define("Assignment", {
+    assignmentName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    permissionLevel: {
+    subjectName: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    roll: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
+
   });
-  return Individual;
+  return Assignment;
 };
