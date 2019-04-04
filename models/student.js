@@ -5,19 +5,16 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     classNumber: {
-      type: DataTypes.INTERGER,
+      type: DataTypes.INTEGER,
       allowNull: false
     },
 
+
   });
-  Grades.associate = function (models) {
-    // We're saying that a Grades should belong to an Assignment
-    // A Grades can't be created without an Assignment due to the foreign key constraint
-    Grades.belongsTo(models.Assignment, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
+  Students.associate = function (models) {
+    // We're saying that a Students should belong to an Assignment
+    // A Students can't be created without an Assignment due to the foreign key constraint
+    Students.belongsTo(models.Teachers);
   };
 
   return Students;
