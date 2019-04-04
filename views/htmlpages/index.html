@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ############ Reset CSS ############ -->
+    <!-- <link href="./assets/css/reset.css" rel="stylesheet"> -->
+    <!-- ############ Bootstrap CDN ############ -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" media="screen" title="no title" charset="utf-8">
+    <title>My Grade Book</title>
+</head>
+<!-- ############ Nav Bar ############ -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="./index.html">
+        <h1>My Grade Book</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-2">
+            <li class="nav-item mr-2" id="navRegister">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item mr-2" id="navLogin">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item mr-2" id="navLogout">
+                <a class="nav-link" href="#">Sign Up</a>
+            </li>
+        </ul>
+        <span class="ml-auto navbar-text">
+            <h3></h3>
+        </span>
+    </div>
+</nav>
+
+<body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1" class="active"></li>
+            <li data-target="#carousel" data-slide-to="2" class="active"></li>
+        </ol>
+        <div class="carousel-inner" data-interval="5000">
+            <div class="carousel-item active">
+                <img src="../../public/images/teacher.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="../../public/images/teacher2.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="../../public/images/teacher3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron1 jumbotron-fluid" id="loginDiv">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <h1>Login</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control email" placeholder="Enter Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control password" placeholder="Enter Password">
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-primary submit">Login</button>
+                    </div>
+                </div>
+            </form>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron2 jumbotron-fluid" id="registerDiv">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <h1>Register</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control password" placeholder="Enter Password">
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-primary submit">Register</button>
+                    </div>
+                </div>
+            </form>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        displayLogin();
+        // Function to run when user clicks Register button in navbar
+        $("#navRegister").click(displayRegister);
+
+        function displayRegister() {
+            $("#registerDiv").show();
+            $("#loginDiv").hide();
+        }
+
+        // Function to run when user clicks Login button in navbar
+        $("#navLogin").click(displayLogin);
+
+        function displayLogin() {
+            console.log("login clicked");
+            $("#loginDiv").show();
+            $("#registerDiv").hide();
+        }
+
+        // Function to run when user clicks Logout button in navbar
+        $("#navLogout").click(userLogOut);
+
+        function userLogOut() {
+            console.log("logout clicked");
+            // firebase.auth().signOut();
+            $("#loginDiv").hide();
+            $("#registerDiv").hide();
+        };
+
+        $("#showLogin").click(displayLogin);
+
+        $("#showRegister").click(displayRegister);
+
+        // // Firebase setup
+        // // Initialize Firebase
+        // var config = {
+        //     apiKey: "AIzaSyCxWT735EGIcbdNLZyxsWYns14mJ7UvOtg",
+        //     authDomain: "mygradebook-355d0.firebaseapp.com",
+        //     databaseURL: "https://mygradebook-355d0.firebaseio.com",
+        //     projectId: "mygradebook-355d0",
+        //     storageBucket: "mygradebook-355d0.appspot.com",
+        //     messagingSenderId: "619478408217"
+        // };
+        // firebase.initializeApp(config);
+
+        // var database = firebase.database();
+
+        // // Function to run based on if user is logged in or not
+        // firebase.auth().onAuthStateChanged(function (user) {
+        //     if (user) {
+        //         // User is signed in.
+        //         displayChoices();
+        //         $("#intro").hide();
+        //         console.log("it's been called")
+        //     } else {
+        //         // No user is signed in.
+        //         userLogOut();
+        //     }
+        // });
+
+        // // Function to register a new user
+        // $(".register form").on("submit", function (event) {
+        //     event.preventDefault();
+
+        //     var email = $(".register .email").val();
+        //     var password = $(".register .password").val();
+
+        //     firebase.auth().createUserWithEmailAndPassword(email, password)
+        //         .then(function (user) {
+        //             console.log(user);
+        //         })
+        //         .catch(function (err) {
+        //             console.log(err);
+        //         })
+        // });
+
+        // Function to login existing user
+        // $(".login form").on("submit", function (event) {
+        //     event.preventDefault();
+
+        //     var email = $(".login .email").val();
+        //     var password = $(".login .password").val();
+
+        //     firebase.auth().signInWithEmailAndPassword(email, password)
+        //         .then(function (user) {
+        //             console.log(user);
+        //         })
+        //         .catch(function (err) {
+        //             console.log(err);
+        //         });
+        // });
+
+    })
+
+</script>
+
+</html>
