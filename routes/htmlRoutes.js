@@ -1,10 +1,8 @@
-var path = require("path");
+// var db = require("../models");
 
-module.exports = htmlRoutes = function (router) {
-    router.get("/", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
-    });
-    router.get("/survey", function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/survey.html"));
-    });
+
+module.exports = function (app) {
+  app.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/"));
+  });
 };
