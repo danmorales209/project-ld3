@@ -35,14 +35,17 @@ $("#showRegister").click(displayRegister);
 // Firebase setup
 // Initialize Firebase
 firebase.initializeApp(config);
-var config = {
+
+  // Initialize Firebase
+  var config = {
     apiKey: "AIzaSyCxWT735EGIcbdNLZyxsWYns14mJ7UvOtg",
     authDomain: "mygradebook-355d0.firebaseapp.com",
     databaseURL: "https://mygradebook-355d0.firebaseio.com",
     projectId: "mygradebook-355d0",
     storageBucket: "mygradebook-355d0.appspot.com",
     messagingSenderId: "619478408217"
-};
+  };
+
 // Function to run based on if user is logged in or not
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
