@@ -8,6 +8,11 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    maxPoints: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    }
   });
   Assignment.associate = function (models) {
     Assignment.hasMany(models.Grades);
