@@ -24,6 +24,9 @@ app.use(express.static("public"));
 // Routes
 require("./routes/assignment-api")(app);
 require("./routes/htmlRoutes")(app);
+require("./routes/grades-api")(app);
+require("./routes/student-api")(app);
+
 
 var syncOptions = { force: false };
 
