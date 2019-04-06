@@ -2,8 +2,8 @@ var db = require("../models");
 
 module.exports = function (app) {
   app.get("/api/assignment", function (req, res) {
-    db.Assignment.findAll().then(function (results) {
-      res.json(results);
+    db.Assignment.findAll().then(function (data) {
+      res.json(data);
     });
   });
 
@@ -12,8 +12,8 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       }
-    }).then(function (results) {
-      res.json(results);
+    }).then(function (data) {
+      res.json(data);
     });
   });
 };
