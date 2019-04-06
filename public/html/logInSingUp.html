@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
@@ -57,16 +58,16 @@
         </ol>
         <div class="carousel-inner" data-interval="5000">
             <div class="carousel-item active">
-                <img src="../../public/images/a-teacher.jpg" class="d-block w-100" alt="Slide 1">
+                <img src="../images/a-teacher.jpg" class="d-block w-100" alt="Slide 1">
             </div>
             <div class="carousel-item" data-interval="5000">
-                <img src="../../public/images/child.jpg" class="d-block w-100" alt="Slide 2">
+                <img src="../images/child.jpg" class="d-block w-100" alt="Slide 2">
             </div>
             <div class="carousel-item" data-interval="5000">
-                <img src="../../public/images/kids-and-teacher.jpg" class="d-block w-100" alt="Slide 3">
+                <img src="../images/kids-and-teacher.jpg" class="d-block w-100" alt="Slide 3">
             </div>
             <div class="carousel-item" data-interval="5000">
-                <img src="../../public/images/teach.jpg" class="d-block w-100" alt="Slide 4">
+                <img src="../images/teach.jpg" class="d-block w-100" alt="Slide 4">
             </div>
         </div>
     </div>
@@ -104,8 +105,16 @@
                             <label for="studentID">Student ID</label>
                             <input type="studentID" class="form-control password" placeholder="Enter Student ID">
                         </div>
-                        <button type="submit" class="btn btn-primary submit">Register</button>
+                        <button type="submit" class="btn btn-primary submit"><a
+                                href="logInSingUp.html">Register</a></button>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm">
+                        <h1>Please log in once you Register</h1>
+                    </div>
+                    <div class="col-sm-2"></div>
                 </div>
             </form>
         </div>
@@ -133,110 +142,15 @@
                 <div class="row">
                     <div class="col-sm-3"></div>
                     <div class="col-sm-6">
-                        <button type="submit" class="btn btn-primary submit">Log In</button>
+                        <button type="submit" class="btn btn-primary submit"><a
+                                href="/public/html/teachLanding.html">Log In</a></button>
                     </div>
                 </div>
             </form>
             <div class="col-sm-3"></div>
         </div>
     </div>
-
+    <script src="../js/firebase.js"></script>
 </body>
-<script type="text/javascript">
-
-    displayLogin();
-
-    // Function to run when user clicks Register button in navbar
-    $("#navRegister").click(displayRegister);
-
-    function displayRegister() {
-        $("#registerDiv").show();
-        $("#loginDiv").hide();
-    }
-
-    // Function to run when user clicks Login button in navbar
-    $("#navLogin").click(displayLogin);
-
-    function displayLogin() {
-        console.log("login clicked");
-        $("#loginDiv").show();
-        $("#registerDiv").hide();
-    }
-
-    // Function to run when user clicks Logout button in navbar
-    $("#navLogout").click(userLogOut);
-
-    function userLogOut() {
-        console.log("logout clicked");
-        // firebase.auth().signOut();
-        $("#loginDiv").hide();
-        $("#registerDiv").hide();
-    };
-
-    $("#showLogin").click(displayLogin);
-
-    $("#showRegister").click(displayRegister);
-
-    // Firebase setup
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCxWT735EGIcbdNLZyxsWYns14mJ7UvOtg",
-        authDomain: "mygradebook-355d0.firebaseapp.com",
-        databaseURL: "https://mygradebook-355d0.firebaseio.com",
-        projectId: "mygradebook-355d0",
-        storageBucket: "mygradebook-355d0.appspot.com",
-        messagingSenderId: "619478408217"
-    };
-    firebase.initializeApp(config);
-
-    var database = firebase.database();
-
-    // Function to run based on if user is logged in or not
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            console.log(user);
-            // User is signed in
-            // display landing page
-        } else {
-            // No user is signed in.
-            // userLogOut();
-            // display sorry you are not recognized by our database as a student
-        }
-    });
-
-    // Function to register a new user
-    $("#register").on("submit", function (event) {
-        event.preventDefault();
-
-        var email = $("#register-email").val();
-        var password = $("#register-password").val();
-        console.log(email);
-        console.log(password);
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(function (user) {
-                console.log(user);
-            })
-            .catch(function (err) {
-                console.log(err);
-            })
-    });
-
-    // Function to login existing user
-    $("#login").on("submit", function (event) {
-        event.preventDefault();
-
-        var email = $(".login .email").val();
-        var password = $(".login .password").val();
-
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(function (user) {
-                console.log(user);
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-    });
-
-</script>
 
 </html>
