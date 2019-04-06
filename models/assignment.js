@@ -8,7 +8,9 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-
   });
+  Assignment.associate = function (models) {
+    Assignment.hasMany(models.Grades);
+  };
   return Assignment;
 };
