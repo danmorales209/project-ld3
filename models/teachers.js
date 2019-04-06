@@ -12,8 +12,6 @@ module.exports = function (sequelize, DataTypes) {
 
 
   Teachers.associate = function (models) {
-    // We're saying that a Teachers should belong to an Assignment
-    // A Teachers can't be created without an Assignment due to the foreign key constraint
     Teachers.hasMany(models.Students);
   };
   return Teachers;
