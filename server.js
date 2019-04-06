@@ -22,7 +22,7 @@ app.use(express.static("public"));
 // app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/apiRoutes")(app);
+require("./routes/assignment-api")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
