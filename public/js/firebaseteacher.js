@@ -62,7 +62,7 @@ $(document).ready(function () {
     });
 
     // Function to register a new user
-    $("#register").on("submit", function (event) {
+    $("#submit").on("click", function (event) {
         event.preventDefault();
         console.log("register was clicked!")
         var email = $("#register-email").val();
