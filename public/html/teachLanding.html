@@ -21,36 +21,67 @@
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
     <title>My Grade Book</title>
+    <!--JS for landing page-->
+    <script src="../js/teacherLanding.js"></script>
+    <!--JS for landing page-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
 </head>
 <!-- ############ Nav Bar ############ -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <h1>My Grade Book</h1>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ml-2">
-            <li class="nav-item mr-2" id="allStudents">
-                <a class="nav-link" href="#">My Students</a>
-            </li>
-            <li class="nav-item mr-2" id="addNewAssign">
-                <a class="nav-link" href="#">Add New Assignment</a>
-            </li>
-            <li class="nav-item mr-2" id="navLogout">
-                <a class="nav-link" href="#">Log out</a>
-            </li>
-        </ul>
-        <span class="ml-auto navbar-text">
-            <h3></h3>
-        </span>
-    </div>
+
+  <a class="navbar-brand" href="#">
+    <h1>My Grade Book</h1>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav ml-2">
+      <li class="nav-item mr-2" id="allStudents">
+        <a class="nav-link" href="#">My Students</a>
+      </li>
+
+      <li class="nav-item mr-2" id="addNewAssign">
+        <a class="nav-link" href="#">Add New Assignment</a>
+      </li>
+
+      <li class="nav-item mr-2" id="navLogout">
+        <a class="nav-link" href="#">Log out</a>
+      </li>
+
+      <li class="nav-item mr-2 my-auto">
+        <p class="nav-link text-primary">Welcome Back <span id="user-name">USER</span></p>
+      </li>
+
+    </ul>
+
+    <span class="ml-auto navbar-text">
+      <h3></h3>
+    </span>
+
+  </div>
 </nav>
 
 <body>
-    // LANDING PAGE will show all students, the grade point average for them
-    // and a button that will take you to that students assignment page
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="row">
+          <p class="col-3">Student ID</p>
+          <p class="col-9">Name</p>
+        </div>
+        <div id="display-students" class="row">
+        </div>
+      </div>
+      <div class="col-9">
+        <h1 class="display-4 text-center bg-light">Chart Goes Here</h1>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
 
     <script type="text/javascript" src="../js/firebase.js"></script>
 </body>
