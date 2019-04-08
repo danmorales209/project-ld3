@@ -15,13 +15,13 @@ module.exports = function (app) {
     });
   });
 
-  app.put("/api/update/:student/:assignment", function (req, res) {
+  app.put("/api/grades/:student/:assignment", function (req, res) {
     db.Grades.update(
       req.body,
       {
         where: {
-          StudentId: req.params.student,
           AssignmentId: req.params.assignment,
+          StudentId: req.params.student,
         }
       }
     ).then(function (data) {
