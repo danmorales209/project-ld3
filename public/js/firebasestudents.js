@@ -1,0 +1,98 @@
+function displayLogin() {
+    $("#loginDiv").show();
+    $("#registerDiv").hide();
+};
+
+function displayRegister() {
+    $("#registerDiv").show();
+    $("#loginDiv").hide();
+};
+
+function userLogOut() {
+    firebase.auth().signOut();
+    $("#loginDiv").show();
+    $("#registerDiv").hide();
+};
+
+$(document).ready(function () {
+    displayLogin();
+
+    // Function to run when user clicks Register button in navbar
+    $("#navRegister").click(displayRegister);
+
+    // Function to run when user clicks Login button in navbar
+    $("#navLogin").click(displayLogin);
+
+    // Function to run when user clicks Logout button in navbar
+    $("#navLogout").on("click", function (event) {
+        console.log("logout clicked");
+        event.preventDefault();
+        userLogOut();
+    });
+
+
+    $("#showLogin").click(displayLogin);
+
+    $("#showRegister").click(displayRegister);
+
+    // Firebase setup
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDbO2HGV45yEB6FVKpYJi0uARvSmK9gyGI",
+        authDomain: "student-53d73.firebaseapp.com",
+        databaseURL: "https://student-53d73.firebaseio.com",
+        projectId: "student-53d73",
+        storageBucket: "student-53d73.appspot.com",
+        messagingSenderId: "1082140063572"
+    };
+    firebase.initializeApp(config);
+
+    var database = firebase.database();
+
+    // Function to run based on if user is logged in or not
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+            console.log("user is signed in!");
+        } else {
+            console.log("no user signed in!");
+            // No user is signed in.
+            userLogOut();
+        }
+    });
+
+    // Function to register a new user
+    $("#register").on("submit", function (event) {
+        event.preventDefault();
+        console.log("register was clicked!")
+        var email = $("#register-email").val();
+        var password = $("#register-password").val();
+        console.log(email);
+        console.log(password);
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(function (user) {
+                console.log(user);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+    });
+
+    // Function to login existing user
+    $("#login").on("submit", function (event) {
+        event.preventDefault();
+
+        var email = $("#login-email").val();
+        var password = $("#login-password").val();
+        console.log("logged in");
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(function (user) {
+                console.log("hello")
+                console.log(firebase.auth().currentUser);
+                // window.location.replace("./teachLanding.html");
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    });
+})
