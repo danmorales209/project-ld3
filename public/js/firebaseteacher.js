@@ -72,6 +72,7 @@ $(document).ready(function () {
         firebase.auth().createUserWithEmailAndPassword(email, password)
             .then(function (user) {
                 console.log(user);
+                window.location.replace("./teachLanding.html");
             })
             .catch(function (err) {
                 console.log(err);
@@ -89,7 +90,7 @@ $(document).ready(function () {
             .then(function (user) {
                 console.log("hello")
                 console.log(firebase.auth().currentUser);
-                // window.location.replace("./teachLanding.html");
+                window.location.replace("./teachLanding.html");
             })
             .catch(function (err) {
                 console.log(err);
