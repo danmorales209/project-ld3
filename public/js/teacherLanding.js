@@ -5,13 +5,13 @@ $(document).ready(function () {
   // DUMMY DATA //
 
   let students = [
-    "Al",
-    "Bill",
-    "Casey",
-    "Danielle",
-    "Ele",
-    "Fanny",
-    "Gabby",
+    { name: "Al", grade: .9 },
+    { name: "Bill", grade: .2 },
+    { name: "Casey", grade: .7 },
+    { name: "Danielle", grade: .9 },
+    { name: "Ele", grade: .2 },
+    { name: "Fanny", grade: .9 },
+    { name: "Gabby", grade: .9 }
   ];
 
   students.forEach((student, index) => {
@@ -21,9 +21,27 @@ $(document).ready(function () {
       .appendTo($("#display-students"));
 
     let nameP = $("<p>")
-      .text(student)
+      .text(student.name)
       .addClass("col-9 display-5")
       .appendTo($("#display-students"));
+  });
+
+  var ctx = document.getElementById("myChart").getContext('2d');
+  var chart = new Chart(ctx, {
+    type: 'bar',
+
+    data: {
+      labels: students.map(student => student.name),
+      datasets: [{
+        label: "Some Data",
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        borderWidth: 1,
+        data: students.map(student => student.grade)
+      }]
+    },
+
+    options: {}
   });
 
 });
