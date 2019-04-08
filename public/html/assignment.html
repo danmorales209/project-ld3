@@ -23,38 +23,76 @@
 </head>
 <!-- ############ Nav Bar ############ -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <h1>My Grade Book</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-2">
-                <li class="nav-item mr-2" id="allStudents">
-                    <a class="nav-link" href="#">My Students</a>
-                </li>
-                <li class="nav-item mr-2" id="addNewAssign">
-                    <a class="nav-link" href="#">Add New Assignment</a>
-                </li>
-                <li class="nav-item mr-2" id="navLogout">
-                    <a class="nav-link" href="#">Log out</a>
-                </li>
-            </ul>
-            <span class="ml-auto navbar-text">
-                <h3></h3>
-            </span>
-        </div>
-    </nav>
+    <a class="navbar-brand" href="#">
+        <h1>My Grade Book</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-2">
+            <li class="nav-item mr-2" id="allStudents">
+                <a class="nav-link" href="#">My Students</a>
+            </li>
+            <li class="nav-item mr-2" id="addNewAssign">
+                <a class="nav-link" href="#">Add New Assignment</a>
+            </li>
+            <li class="nav-item mr-2" id="navLogout">
+                <a class="nav-link" href="#">Log out</a>
+            </li>
+        </ul>
+        <span class="ml-auto navbar-text">
+            <h3></h3>
+        </span>
+    </div>
+</nav>
 
 <body>
-
-    // ADD NEW ASSIGNMENT portion at the top of the page where the user enters the new assignment info 
-    // (assignment name, assignment point value, assignment due date, subject)
+    <div class="jumbotron">
+        <h1 class="display-4">Adding New Assignment</h1>
+        <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label for="assignmentName">Assignment Name</label>
+                            <input type="name" class="form-control" id="assignmentName"
+                                placeholder="Enter Assignment Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentPointValue">Assignment Point Value</label>
+                            <input type="value" class="form-control" id="assignmentPointValue"
+                                placeholder="Enter Point Value">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label for="assignmentDueDate">Assignment Due Date</label>
+                            <input type="date" class="form-control" id="assignmentDueDate" placeholder="Enter Due Date">
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentSubject">Subject</label>
+                            <input type="subject" class="form-control" id="assignmentSubject"
+                                placeholder="Enter Subject">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm"></div>
+                    <div class="col-sm">
+                        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm"></div>
+                </div>
+        </form>
+    </div>
 
     // page also has every asignment listed as well as two buttons for each assignment which are
     // edit and grade
- 
+
+    <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
 </body>
 
 
