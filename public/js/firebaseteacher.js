@@ -25,11 +25,12 @@ $(document).ready(function () {
 
     // Function to run when user clicks Logout button in navbar
     $("#navLogout").on("click", function (event) {
-        console.log("logout clicked");
         event.preventDefault();
+        console.log("logout clicked");
+        window.location.replace("./teacherLogIn.html");
+
         userLogOut();
     });
-
 
     $("#showLogin").click(displayLogin);
 
