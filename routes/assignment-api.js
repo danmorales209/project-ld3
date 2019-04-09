@@ -11,13 +11,24 @@ module.exports = function (app) {
     db.Assignment.findOne({
       where: {
         id: req.params.id
-      }      
+      }
     }).then(function (data) {
       res.json(data);
     });
   });
   app.post("/api/assignment", function (req, res) {
-    db.Assignment.create(req.body).then(function(data){
+    db.Assignment.create(req.body).then(function (data) {
+      res.json(data);
+    });
+  });
+  app.put("/api/assignment/:id", function (req, res) {
+    db.Assignment.update(
+      req.body,
+      {
+        where: {
+          id: req.params.id
+        }
+      }).then(function (data) {
       res.json(data);
     });
   });
