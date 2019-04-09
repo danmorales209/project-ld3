@@ -1,13 +1,13 @@
 var db = require("../models");
 
 module.exports = function (app) {
-  app.get("/api/assignment", function (req, res) {
+  app.get("/api/assignments", function (req, res) {
     db.Assignment.findAll().then(function (data) {
       res.json(data);
     });
   });
 
-  app.get("/api/assignment/:id", function (req, res) {
+  app.get("/api/assignments/:id", function (req, res) {
     db.Assignment.findOne({
       where: {
         id: req.params.id
@@ -16,12 +16,12 @@ module.exports = function (app) {
       res.json(data);
     });
   });
-  app.post("/api/assignment", function (req, res) {
+  app.post("/api/assignments", function (req, res) {
     db.Assignment.create(req.body).then(function (data) {
       res.json(data);
     });
   });
-  app.put("/api/assignment/:id", function (req, res) {
+  app.put("/api/assignments/:id", function (req, res) {
     db.Assignment.update(
       req.body,
       {
