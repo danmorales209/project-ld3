@@ -15,17 +15,10 @@ $(document).ready(function () {
                 console.log(d);
             });
     });
-
-    $("#edit").on("click", function (event) {
-        event.preventDefault();
-
-
-    });
     $("#grade").on("click", function (event) {
         event.preventDefault();
         window.location.replace("./gradeAssign");
     });
-
     $.get("/api/assignment", function (data) {
         for (var i = 0; i < data.length; i++) {
             var newRow = $("<tr>");
