@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
@@ -61,14 +62,14 @@
                         </div>
                         <div class="form-group">
                             <label for="assignmentPointValue">Assignment Point Value</label>
-                            <input type="value" class="form-control" id="assignmentPointValue"
+                            <input type="value" class="form-control" id="assignmentPoints"
                                 placeholder="Enter Point Value">
                         </div>
                     </div>
                     <div class="col-sm">
                         <div class="form-group">
                             <label for="assignmentDueDate">Assignment Due Date</label>
-                            <input type="date" class="form-control" id="assignmentDueDate" placeholder="Enter Due Date">
+                            <input type="date" class="form-control" id="assignmentDue" placeholder="Enter Due Date">
                         </div>
                         <div class="form-group">
                             <label for="assignmentSubject">Subject</label>
@@ -87,13 +88,16 @@
             </div>
         </form>
     </div>
+    <div class="jumbotron">
+        <h1 class="display-4">Assignments</h1>
 
-    // page also has every asignment listed as well as two buttons for each assignment which are
-    // edit and grade
-
-    
-
-    <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
+        <div class="container" id="display-assignments">
+            <table class="table table-sm table-hover table-striped table-borderless table-hover">
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
 </body>
 
 
