@@ -22,7 +22,7 @@ $(document).ready(function () {
   $.get("/api/assignments", function (data) {
     console.log(data);
     for (var i = 0; i < data.length; i++) {
-      var newRow = $("<tr>");
+      var newRow = $(`<tr id="${data[i].id}">`);
       newRow.append($(`<td><input class='form-control' value="${data[i].assignmentName}"></td>`));
       newRow.append($(`<td><input class='form-control' value="${data[i].subjectName}"></td>`));
       newRow.append($(`<td><input class='form-control' value="${data[i].dueDate}"></td>`));
@@ -31,5 +31,18 @@ $(document).ready(function () {
       newRow.append($(`<button type='submit' id='grade' class='btn btn-primary'>Grade</button>`));
       $("tbody").append(newRow);
     }
+  });
+  $("#saveChanges").on("click", function (event) {
+    event.preventDefault();
+    $.post("/api/assignments/:id", updateAssign)
+    var updateAssign = {
+      assignmentName: $("#updateName").val().trim(),
+      maxPoints: $("#updatePoints").val().trim(),
+      dueDate: $("#updateDue").val().trim(),
+      subjectName: $("#updateSubject").val().trim(),
+    };
+        .then(function (d) {
+      console.log(d);
+    });
   });
 });
