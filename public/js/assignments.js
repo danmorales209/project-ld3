@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#submit").on("click", function (event) {
+  $("#newAssign").on("click", function (event) {
     event.preventDefault();
     var newAssign = {
       assignmentName: $("#assignmentName").val().trim(),
