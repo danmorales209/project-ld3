@@ -22,7 +22,7 @@ app.use(express.static("public"));
 // app.set("view engine", "handlebars");
 
 // Routes
-require("./routes/assignment-api")(app);
+require("./routes/assignments-api")(app);
 require("./routes/htmlRoutes")(app);
 require("./routes/grades-api")(app);
 require("./routes/student-api")(app);
