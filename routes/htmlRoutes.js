@@ -9,6 +9,9 @@ module.exports = function (app) {
   app.get("/teacher", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/html/teachLanding.html"));
   });
+  app.get("/assignments", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/assignments.html"));
+  });
   app.get("/student", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/html/individualStudent.html"));
   });
