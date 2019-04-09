@@ -21,3 +21,17 @@ VALUES
 ("History Paper 1", "History", 100, now(), now(), now()),
 ("Happy Poem", "English", 100, now(), now(), now()),
 ("Karate", "PE", 100, now(), now(), now());
+
+INSERT INTO grades
+(gradeValue, insertedAt, updatedAt, AssignmentId, StudentId)
+VALUES 
+(90, now(), now(), 1, 1),
+(90, now(), now(), 1, 2),
+(90, now(), now(), 1, 3),
+(90, now(), now(), 1, 4),
+(90, now(), now(), 1, 5),
+(90, now(), now(), 2, 1),
+(90, now(), now(), 2, 2),
+(90, now(), now(), 2, 3),
+(90, now(), now(), 2, 4),
+(90, now(), now(), 2, 5);
