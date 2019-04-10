@@ -27,8 +27,7 @@ $(document).ready(function () {
   $("#navLogout").on("click", function (event) {
     event.preventDefault();
     console.log("logout clicked");
-    window.location.replace("./teacherLogIn.html");
-
+    location = "/";
     userLogOut();
   });
 
@@ -73,7 +72,7 @@ $(document).ready(function () {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(function (user) {
         console.log(user);
-        window.location.replace("./teachLanding.html");
+        window.location = "/teacher";
       })
       .catch(function (err) {
         console.log(err);
@@ -91,7 +90,7 @@ $(document).ready(function () {
       .then(function (user) {
         console.log("hello");
         console.log(firebase.auth().currentUser);
-        window.location.replace("./teachLanding.html");
+        window.location = "/teacher";
       })
       .catch(function (err) {
         console.log(err);
