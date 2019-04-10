@@ -22,6 +22,7 @@ module.exports = function (app) {
     });
   });
   app.put("/api/assignments/:id", function (req, res) {
+    console.log(req.body);
     db.Assignment.update(
       req.body,
       {
