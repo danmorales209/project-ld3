@@ -23,7 +23,7 @@ VALUES
 ("Karate", "PE", 100, now(), now(), now());
 
 INSERT INTO grades
-(gradeValue, insertedAt, updatedAt, AssignmentId, StudentId)
+(gradeValue, createdAt, updatedAt, AssignmentId, StudentId)
 VALUES 
 (90, now(), now(), 1, 1),
 (90, now(), now(), 1, 2),
