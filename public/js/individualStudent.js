@@ -1,8 +1,8 @@
-$("#studentDropDown").on("click", function (event) {
-    event.preventDefault();
-    $.get("/api/students", function (data) {
-    })
-});
+// $("#studentDropDown").on("click", function (event) {
+//     event.preventDefault();
+//     $.get("/api/students", function (data) {
+//     })
+// });
 
 $(document).ready(function () {
 
@@ -16,16 +16,20 @@ $(document).ready(function () {
 
 
     $("#individualStudentChoices").on("click", "div.clickme", function () {
-        var $tableBody = $("#studentTable");
-        var newRow = $("<tr>");
         var studentID = $(this).attr("data-id");
 
         $.get("/api/students/" + studentID).then(function (data) {
+            $("#studentNameDisplay").text("Name: " + data.name)
+            for (var i = 0; i < data.Grades.length; i++){
+                console.log(data.Grades[i]);
+                var $tableBody = $("#studentTable");
+                var newRow = $("<tr>");
+                // newRow.append(`<td>${data.name}</td>`);
+                newRow.append(`<td>${data.Grades[i].Assignment.assignmentName}</td>`)
+                newRow.append(`<td>${data.Grades[i].gradeValue}</td>`)
+                $tableBody.append(newRow);
+            }
             console.log(data.Grades[0].Assignment.assignmentName);
-            newRow.append(`<td>${data.name}</td>`);
-            newRow.append(`<td>${data.Grades[0].Assignment.assignmentName}</td>`);
-            newRow.append(`<td>${data.Grades[0].gradeValue}</td>`);
-            $tableBody.append(newRow);
         })
     })
 });
