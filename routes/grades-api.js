@@ -28,4 +28,14 @@ module.exports = function (app) {
       res.json(data);
     });
   });
+  app.get("/api/students", function (req, res) {
+    db.Students.findAll({
+      include: {
+        model: db.Grades,
+        include: [db.Assignment]
+      }
+    }).then(function (data) {
+      res.json(data);
+    });
+  });
 };
