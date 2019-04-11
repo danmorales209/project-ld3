@@ -2,6 +2,7 @@ module.exports = function (sequelize, DataTypes) {
   var Grades = sequelize.define("Grades", {
     gradeValue: {
       type: DataTypes.INTEGER,
+      defaultValue: 0,
       allowNull: false
     },
   });

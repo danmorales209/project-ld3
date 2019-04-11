@@ -2,8 +2,20 @@ var db = require("../models");
 
 module.exports = function (app) {
   app.get("/api/grades", function (req, res) {
+    console.log(req.body);
     db.Grades.findAll({
       include: [db.Students, db.Assignment]
+    }).then(function (data) {
+      res.json(data);
+    });
+  });
+  app.get("/api/grades/:id", function (req, res) {
+    console.log(req.params.id);
+    db.Grades.findAll({
+      include: [db.Students, db.Assignment],
+      where: {
+        AssignmentId: req.params.id,
+      }
     }).then(function (data) {
       res.json(data);
     });
