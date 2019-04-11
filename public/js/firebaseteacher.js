@@ -47,7 +47,7 @@ $(document).ready(function () {
   };
   firebase.initializeApp(config);
 
-  var database = firebase.database();
+  // var database = firebase.database();
 
   // Function to run based on if user is logged in or not
   firebase.auth().onAuthStateChanged(function (user) {
@@ -88,7 +88,7 @@ $(document).ready(function () {
     console.log("logged in");
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then(function (user) {
-        console.log("hello");
+        console.log(user);
         console.log(firebase.auth().currentUser);
         window.location = "/teacher";
       })
