@@ -1,35 +1,31 @@
-$(document).ready(function () {
-    $("#newAssign").on("click", function (event) {
-        event.preventDefault();
-        var newAssign = {
-            assignmentName: $("#assignmentName").val().trim(),
-            maxPoints: $("#assignmentPoints").val().trim(),
-            dueDate: $("#assignmentDue").val().trim(),
-            subjectName: $("#assignmentSubject").val().trim(),
-        };
-        console.log(newAssign);
-        // Send an AJAX POST-request with jQuery
-        $.post("/api/assignments", newAssign)
+$("#studentDropDown").on("click", function (event) {
+    event.preventDefault();
+    $.get("/api/students", function (data) {
+    })
+});
 
-            .then(function (d) {
-                console.log(d);
-            });
-    });
-    $("#grade").on("click", function (event) {
-        event.preventDefault();
-        window.location.replace("./gradeAssign.html");
-    });
-    $.get("/api/assignments", function (data) {
-        console.log(data);
+$(document).ready(function () {
+
+    $.get("/api/students").then(function (data) {
         for (var i = 0; i < data.length; i++) {
-            var newRow = $("<tr>");
-            newRow.append($(`<td><input class='form-control' value="${data[i].assignmentName}"></td>`));
-            newRow.append($(`<td><input class='form-control' value="${data[i].subjectName}"></td>`));
-            newRow.append($(`<td><input class='form-control' value="${data[i].dueDate}"></td>`));
-            newRow.append($(`<td><input class='form-control' value="${data[i].maxPoints}"></td>`));
-            newRow.append($(`<button type='submit' id='saveChanges' class='btn btn-primary'>Save Changes</button>`));
-            newRow.append($(`<button type='submit' id='grade' class='btn btn-primary'>Grade</button>`));
-            $("tbody").append(newRow);
+            var newOption = $("#individualStudentChoices");
+            newOption.append($(`<div data-id=${data[i].id} class="clickme text-center">${data[i].name}</div><hr>`));
         }
-    });
+    })
+
+
+
+    $("#individualStudentChoices").on("click", "div.clickme", function () {
+        var $tableBody = $("#studentTable");
+        var newRow = $("<tr>");
+        var studentID = $(this).attr("data-id");
+
+        $.get("/api/students/" + studentID).then(function (data) {
+            console.log(data.Grades[0].Assignment.assignmentName);
+            newRow.append(`<td>${data.name}</td>`);
+            newRow.append(`<td>${data.Grades[0].Assignment.assignmentName}</td>`);
+            newRow.append(`<td>${data.Grades[0].gradeValue}</td>`);
+            $tableBody.append(newRow);
+        })
+    })
 });
