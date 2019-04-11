@@ -27,6 +27,7 @@ $(document).ready(function () {
                 // newRow.append(`<td>${data.name}</td>`);
                 newRow.append(`<td>${data.Grades[i].Assignment.assignmentName}</td>`)
                 newRow.append(`<td>${data.Grades[i].gradeValue}</td>`)
+                newRow.append(`<button class="btn btn-secondary">Edit</button>`)
                 $tableBody.append(newRow);
             }
             console.log(data.Grades[0].Assignment.assignmentName);
