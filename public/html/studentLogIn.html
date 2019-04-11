@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ############ Reset CSS ############ -->
+    <link href="../styles/reset.css" rel="stylesheet">
+    <!-- ############ Bootstrap CDN ############ -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
+    <title>My Grade Book</title>
+</head>
+<!-- ############ Nav Bar ############ -->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <h1>My Grade Book</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-2">
+            <li class="nav-item mr-2" id="navLogin">
+                <a class="nav-link" href="#">Log in</a>
+            </li>
+            <li class="nav-item mr-2" id="navRegister">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+            <li class="nav-item mr-2" id="navLogout">
+                <a class="nav-link" href="#">Log out</a>
+            </li>
+        </ul>
+        <span class="ml-auto navbar-text">
+            <h3></h3>
+        </span>
+    </div>
+</nav>
+
+<body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1" class="active"></li>
+            <li data-target="#carousel" data-slide-to="2" class="active"></li>
+            <li data-target="#carousel" data-slide-to="3" class="active"></li>
+        </ol>
+        <div class="carousel-inner" data-interval="5000">
+            <div class="carousel-item active">
+                <img src="../images/a-teacher.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="../images/child.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="../images/kids-and-teacher.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+            <div class="carousel-item" data-interval="5000">
+                <img src="../images/teach.jpg" class="d-block w-100" alt="Slide 4">
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron1 jumbotron-fluid" id="registerDiv">
+        <div class="container">
+            <form id="register">
+                <div class="row">
+                    <h1>Register</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control email" id="register-email"
+                                placeholder="Enter Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control password" id="register-password"
+                                placeholder="Enter Password">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="firstName" class="form-control firstName" placeholder="Enter First Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="lastName" class="form-control lastName" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-group">
+                            <label for="studentID">Student ID</label>
+                            <input type="studentID" class="form-control password" placeholder="Enter Student ID">
+                        </div>
+                        <button type="submit" class="btn btn-primary submit"><a href="#">Register</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron2 jumbotron-fluid" id="loginDiv">
+        <div class="container">
+            <form id="login">
+                <div class="row">
+                    <h1>Log In</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" class="form-control email" id="login-email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control password" id="login-password"
+                                placeholder="Enter Password">
+                        </div>
+                        <div class="col-sm-2"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-primary submit"><a href="#">Log In</a></button>
+                    </div>
+                </div>
+                <div class="col-sm-3"></div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/firebase.js"></script>
+</body>
+
+</html>

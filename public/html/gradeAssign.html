@@ -23,38 +23,41 @@
 </head>
 <!-- ############ Nav Bar ############ -->
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <h1>My Grade Book</h1>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav ml-2">
-                <li class="nav-item mr-2" id="allStudents">
-                    <a class="nav-link" href="#">My Students</a>
-                </li>
-                <li class="nav-item mr-2" id="addNewAssign">
-                    <a class="nav-link" href="#">Add New Assignment</a>
-                </li>
-                <li class="nav-item mr-2" id="navLogout">
-                    <a class="nav-link" href="#">Log out</a>
-                </li>
-            </ul>
-            <span class="ml-auto navbar-text">
-                <h3></h3>
-            </span>
-        </div>
-    </nav>
+    <a class="navbar-brand" href="#">
+        <h1>My Grade Book</h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-2">
+            <li class="nav-item mr-2" id="allStudents">
+                <span class="nav-link">My Students</span>
+            </li>
+
+            <li class="nav-item mr-2" id="addNewAssign">
+                <span class="nav-link">Add New Assignment</span>
+            </li>
+
+            <li class="nav-item mr-2" id="navLogout">
+                <span class="nav-link">Log out</span>
+            </li>
+        </ul>
+        <span class="ml-auto navbar-text">
+            <h3></h3>
+        </span>
+    </div>
+</nav>
 
 <body>
+    <div class="jumbotron">
+        <h1 class="display-4">Grading Assignment</h1>
+    </div>
 
-    // ADD NEW ASSIGNMENT portion at the top of the page where the user enters the new assignment info 
-    // (assignment name, assignment point value, assignment due date, subject)
+    // page has an input for every single grade for every student in the class
 
-    // page also has every asignment listed as well as two buttons for each assignment which are
-    // edit and grade
- 
+
+    <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
 </body>
 
 

@@ -6,7 +6,8 @@ module.exports = function (sequelize, DataTypes) {
     },
     classRoom: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: 100
     }
   });
 

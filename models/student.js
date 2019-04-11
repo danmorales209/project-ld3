@@ -4,12 +4,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    classNumber: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
-
-
   });
   Students.associate = function (models) {
     Students.belongsTo(models.Teachers);
