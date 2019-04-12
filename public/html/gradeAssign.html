@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
@@ -56,11 +57,14 @@
     <div class="jumbotron">
         <h1 class="display-4">Grading Assignment</h1>
     </div>
-
-    // page has an input for every single grade for every student in the class
-
-
+    <div class="container" id="display-assignments">
+        <table class="table table-sm table-hover my-auto table-striped table-borderless table-hover">
+            <tbody>
+            </tbody>
+        </table>
+    </div>
     <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
+    <script type="text/javascript" src="../js/gradeAssign.js"></script>
 </body>
 
 
