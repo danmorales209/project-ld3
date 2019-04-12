@@ -18,11 +18,11 @@ $.get("/api/grades/" + localStorage.getItem("assignID"), function (data) {
             gradeValue: $(this).prev().val().trim()
         }
         $.post("/api/grades", gradeUpdate)
-            .then(function (d) {
-                location.reload();
-                console.log(d);
+            .then(function (data) {
+                console.log(data);
+                // location.reload();
+                
             });
-
     });
 });
 
