@@ -26,7 +26,9 @@ $(document).ready(function () {
             $(".editButton").on("click", function (event) {
                 event.preventDefault();
                 var gradeID = $(this).attr("data-id");
-                editGrade(data, gradeID);
+                $("#modalHeader").text("Edit Grade for " + data.name)
+                editGrade(data.Assignment.AssignmentId, gradeID);
+
 
             })
         })
@@ -34,14 +36,13 @@ $(document).ready(function () {
 });
 
 function editGrade(data, gradeID) {
-    $("#modalHeader").text("Edit Grade for " + data.name)
-    $("#assignmentNameModal").text("On Assignment " + this);
-    console.log(gradeID);
     $("#newGradeButton").on("click", function (event) {
         event.preventDefault();
-        var newGrade = $("#newGrade").val().trim();
-        // console.log(newGrade)
-        $.post(`/api/grades/${data.id}/${gradeID}`, newGrade)
+        var newGrade = Number($("#newGrade").val().trim());
+        if (newGrade < 0) {
+            console.log("New grade must be a number higher than zero")
+        } else {
+            $.post(`/api/grades/${data}`, { gradeValue: newGrade }).then()
+        }
     })
-
 }
