@@ -27,16 +27,13 @@ module.exports = function (app) {
       res.json(data);
     });
   });
-
   app.put("/api/grades/:student/:assignment", function (req, res) {
-    console.clear();
-    console.log(req.body);
     db.Grades.update(
       req.body,
       {
         where: {
-          AssignmentId: req.params.assignment,
           StudentId: req.params.student,
+          id: req.params.id,
         }
       }
     ).then(function (data) {
