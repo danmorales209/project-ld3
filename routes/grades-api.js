@@ -27,8 +27,7 @@ module.exports = function (app) {
       res.json(data);
     });
   });
-
-  app.put("/api/grades/:student/:id", function (req, res) {
+  app.put("/api/grades/:student/:assignment", function (req, res) {
     db.Grades.update(
       req.body,
       {
@@ -38,16 +37,6 @@ module.exports = function (app) {
         }
       }
     ).then(function (data) {
-      res.json(data);
-    });
-  });
-  app.get("/api/students", function (req, res) {
-    db.Students.findAll({
-      include: {
-        model: db.Grades,
-        include: [db.Assignment]
-      }
-    }).then(function (data) {
       res.json(data);
     });
   });
