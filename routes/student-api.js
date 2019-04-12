@@ -11,4 +11,18 @@ module.exports = function (app) {
       res.json(data);
     });
   });
+  app.get("/api/students/:id", function (req, res) {
+    db.Students.findOne(
+      {
+        where: {
+          id: req.params.id
+        },
+        include: {
+          model: db.Grades,
+          include: [db.Assignment]
+        }
+      }).then(function (data) {
+      res.json(data);
+    });
+  });
 };
