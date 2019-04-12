@@ -44,8 +44,8 @@ module.exports = function (app) {
           id: req.params.id
         }
       }).then(function (data) {
-        res.json(data);
-      });
+      res.json(data);
+    });
   });
 };
 
