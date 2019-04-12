@@ -22,6 +22,7 @@ module.exports = function (app) {
   });
 
   app.post("/api/grades", function (req, res) {
+    console.log("body!",req.body);
     db.Grades.create(req.body).then(function (data) {
       res.json(data);
     });

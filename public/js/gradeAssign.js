@@ -11,6 +11,7 @@ $.get("/api/grades/" + localStorage.getItem("assignID"), function (data) {
     }
 
     $(".gradeUpdate").on("click", function (event) {
+        console.log("grade value clicked");
         var gradeUpdate = {
             AssignmentId: $(this).data("assignId"),
             StudentId: $(this).data("StudentId"),
