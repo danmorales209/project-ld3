@@ -19,13 +19,6 @@ $.get("/api/grades/" + localStorage.getItem("assignID"), function (data) {
 
         var url = "/api/grades/" + student + "/" + assignment;
         console.log(url);
-        // $.post(url, { gradeValue: gradeUpdate.gradeValue })
-        //     .then(function (data) {
-        //         console.log(data);
-        //         // location.reload();
-
-        //     });
-
         $.ajax({
             method: 'PUT',
             url: url,
