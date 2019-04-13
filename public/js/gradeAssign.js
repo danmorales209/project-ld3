@@ -13,10 +13,10 @@ $.get("/api/grades/" + localStorage.getItem("assignID"), function (data) {
     $(".gradeUpdate").on("click", function (event) {
         event.preventDefault();
         console.log("grade value clicked");
-        var assignment=$(this).data("assignid");
-        var student=$(this).data("studentid");
-        var grade= $(`#gradePoints-${student}-${assignment}`).val().trim();
-        
+        var assignment = $(this).data("assignid");
+        var student = $(this).data("studentid");
+        var grade = $(`#gradePoints-${student}-${assignment}`).val().trim();
+
         var url = "/api/grades/" + student + "/" + assignment;
         console.log(url);
         // $.post(url, { gradeValue: gradeUpdate.gradeValue })
