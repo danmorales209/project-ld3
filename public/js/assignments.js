@@ -38,10 +38,10 @@ $(document).ready(function () {
       event.preventDefault();
       var assignment = $(this).data("assignid");
       var name = $(`#updateName-${assignment}`).val().trim();
-      var points=$(`#updatePoints-${assignment}`).val().trim();
-      var date=$(`#updateDue-${assignment}`).val().trim();
-      var subject=$(`#updateSubject-${assignment}`).val().trim();
-      
+      var points = $(`#updatePoints-${assignment}`).val().trim();
+      var date = $(`#updateDue-${assignment}`).val().trim();
+      var subject = $(`#updateSubject-${assignment}`).val().trim();
+
       var updateAssign = {
         assignmentName: name,
         maxPoints: points,
