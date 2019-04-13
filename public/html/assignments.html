@@ -23,92 +23,94 @@
     <title>My Grade Book</title>
 </head>
 <!-- ############ Nav Bar ############ -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <h1>My Grade Book</h1>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ml-2">
-            <li class="nav-item mr-2" id="allStudents">
-                <a href="/teacher" class="nav-link">My Students</a>
-            </li>
+<div class="container">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <h1>My Grade Book</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-2">
+                <li class="nav-item mr-2" id="allStudents">
+                    <a href="/teacher" class="nav-link">My Students</a>
+                </li>
 
-            <li class="nav-item mr-2" id="addNewAssign">
-                <a href="/assignments" class="nav-link">Add New Assignment</a>
-            </li>
-            <li>
-                <a href="/student" class="nav-link">One Student</a>
-            </li>
+                <li class="nav-item mr-2" id="addNewAssign">
+                    <a href="/assignments" class="nav-link">Add New Assignment</a>
+                </li>
+                <li>
+                    <a href="/student" class="nav-link">One Student</a>
+                </li>
 
-            <li class="nav-item mr-2" id="navLogout">
-                <a class="nav-link">Log out</a>
-            </li>
+                <li class="nav-item mr-2" id="navLogout">
+                    <a class="nav-link">Log out</a>
+                </li>
 
-            <li class="nav-item mr-2 my-auto">
-                <p class="nav-link text-primary">Welcome Back <span id="user-name">USER</span></p>
-            </li>
-        </ul>
-        <span class="ml-auto navbar-text">
-            <h3></h3>
-        </span>
-    </div>
-</nav>
+                <li class="nav-item mr-2 my-auto">
+                    <p class="nav-link text-primary">Welcome Back <span id="user-name">USER</span></p>
+                </li>
+            </ul>
+            <span class="ml-auto navbar-text">
+                <h3></h3>
+            </span>
+        </div>
+    </nav>
 
-<body>
-    <div class="jumbotron">
-        <h1 class="display-4">Adding New Assignment</h1>
-        <form>
-            <div class="container">
+    <body>
+        <div class="jumbotron m-1">
+            <h1 class="display-4">Adding New Assignment</h1>
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="assignmentName">Assignment Name</label>
+                                <input type="name" class="form-control" id="assignmentName"
+                                    placeholder="Enter Assignment Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="assignmentPointValue">Assignment Point Value</label>
+                                <input type="value" class="form-control" id="assignmentPoints"
+                                    placeholder="Enter Point Value">
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="assignmentDueDate">Assignment Due Date</label>
+                                <input type="date" class="form-control" id="assignmentDue" placeholder="Enter Due Date">
+                            </div>
+                            <div class="form-group">
+                                <label for="assignmentSubject">Subject</label>
+                                <input type="subject" class="form-control" id="assignmentSubject"
+                                    placeholder="Enter Subject">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                            <label for="assignmentName">Assignment Name</label>
-                            <input type="name" class="form-control" id="assignmentName"
-                                placeholder="Enter Assignment Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="assignmentPointValue">Assignment Point Value</label>
-                            <input type="value" class="form-control" id="assignmentPoints"
-                                placeholder="Enter Point Value">
-                        </div>
+                    <div class="col-sm-5"></div>
+                    <div class="col-sm-2">
+                        <button type="submit" id="newAssign" class="btn btn-primary">Submit</button>
                     </div>
-                    <div class="col-sm">
-                        <div class="form-group">
-                            <label for="assignmentDueDate">Assignment Due Date</label>
-                            <input type="date" class="form-control" id="assignmentDue" placeholder="Enter Due Date">
-                        </div>
-                        <div class="form-group">
-                            <label for="assignmentSubject">Subject</label>
-                            <input type="subject" class="form-control" id="assignmentSubject"
-                                placeholder="Enter Subject">
-                        </div>
-                    </div>
+                    <div class="col-sm-5"></div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-5"></div>
-                <div class="col-sm-2">
-                    <button type="submit" id="newAssign" class="btn btn-primary">Submit</button>
-                </div>
-                <div class="col-sm-5"></div>
-            </div>
-        </form>
-    </div>
-    <div class="jumbotron">
-        <h1 class="display-4">Assignments</h1>
+            </form>
+        </div>
+        <div class="jumbotron m-1">
+            <h1 class="display-4">Assignments</h1>
 
-        <div class="container" id="display-assignments">
-            <table class="table table-sm table-hover table-striped table-borderless table-hover">
-                <tbody>
-                </tbody>
-            </table>
+            <div class="container" id="display-assignments">
+                <table class="table table-sm table-hover table-striped table-borderless table-hover">
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
         <script type="text/javascript" src="../js/assignments.js"></script>
-</body>
+    </body>
 
 
 

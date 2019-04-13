@@ -19,13 +19,13 @@ $(document).ready(function () {
   $.get("/api/assignments", function (data) {
     console.log(data);
     for (var i = 0; i < data.length; i++) {
-      var newRow = $(`<tr>`);
+      var newRow = $(`<tr class="bg-transparent">`);
       newRow.append($(`<td><input id="updateName-${data[i].id}" class='form-control' value="${data[i].assignmentName}"></td>`));
       newRow.append($(`<td><input id="updateSubject-${data[i].id}"" class='form-control' value="${data[i].subjectName}"></td>`));
       newRow.append($(`<td><input id="updateDue-${data[i].id}"" class='form-control' value="${data[i].dueDate}"></td>`));
       newRow.append($(`<td><input id="updatePoints-${data[i].id}"" class='form-control' value="${data[i].maxPoints}"></td>`));
-      newRow.append($(`<button data-assignid="${data[i].id}" class='saveChanges btn btn-primary'>Save Changes</button>`));
-      newRow.append($(`<button data-id="${data[i].id}" class='grade btn btn-primary'>Grade</button>`));
+      newRow.append($(`<button data-assignid="${data[i].id}" class='saveChanges btn btn-primary m-1'>Save Changes</button>`));
+      newRow.append($(`<button data-id="${data[i].id}" class='grade btn btn-primary m-1'>Grade</button>`));
       $("tbody").append(newRow);
     }
     $(".grade").on("click", function (event) {
