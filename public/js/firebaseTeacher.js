@@ -62,7 +62,7 @@ $(document).ready(function () {
   });
 
   // Function to register a new user
-  $("#submit").on("click", function (event) {
+  $("#register").on("submit", function (event) {
     event.preventDefault();
     console.log("register was clicked!");
     var email = $("#register-email").val();
@@ -72,7 +72,7 @@ $(document).ready(function () {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(function (user) {
         console.log(user);
-        window.location = "/teacher";
+        //window.location = "/teacher";
       })
       .catch(function (err) {
         console.log(err);
@@ -90,7 +90,7 @@ $(document).ready(function () {
       .then(function (user) {
         console.log(user);
         console.log(firebase.auth().currentUser);
-        window.location = "/teacher";
+        //window.location = "/teacher";
       })
       .catch(function (err) {
         console.log(err);

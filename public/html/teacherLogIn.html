@@ -16,7 +16,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
@@ -72,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="jumbotron jumbotron1 jumbotron-fluid" id="registerDiv">
+        <div class="jumbotron jumbotron1 p-1 my-1 jumbotron-fluid" id="registerDiv">
             <div class="container">
                 <form id="register">
                     <div class="row">
@@ -103,16 +104,16 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-2"></div>
-                        <div class="col-sm">
-                            <h1>Please log in once you Register</h1>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-primary submit"><a
+                                    href="/teacher">Register</a></button>
                         </div>
-                        <div class="col-sm-2"></div>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="jumbotron jumbotron2 jumbotron-fluid" id="loginDiv">
+        <div class="jumbotron jumbotron2 p-1 my-1 jumbotron-fluid" id="loginDiv">
             <div class="container">
                 <form id="login">
                     <div class="row">
@@ -137,7 +138,7 @@
                     <div class="row">
                         <div class="col-sm-3"></div>
                         <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary submit"><a href="#">Log In</a></button>
+                            <button type="submit" class="btn btn-primary submit"><a href="/teacher">Log In</a></button>
                         </div>
                     </div>
                     <div class="col-sm-3"></div>

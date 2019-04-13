@@ -16,8 +16,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-auth.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/styles.css" media="screen" title="no title" charset="utf-8">
@@ -46,9 +46,6 @@
                 <li class="nav-item mr-2" id="navLogout">
                     <a class="nav-link">Log out</a>
                 </li>
-                <li class="nav-item mr-2 my-auto">
-                    <p class="nav-link text-primary">Welcome Back <span id="user-name">USER</span></p>
-                </li>
             </ul>
             <span class="ml-auto navbar-text">
                 <h3></h3>
@@ -57,68 +54,70 @@
     </nav>
 
     <body>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modalHeader"></h5>
-                        <small id="assignmentNameModal"></small>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+        <div class="jumbotron p-1 my-1 rounded-0">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalHeader"></h5>
+                            <small id="assignmentNameModal"></small>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="newGrade">Grade</label>
+                                    <input type="number" class="form-control" id="newGrade">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="newGradeButton">Save changes</button>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="newGrade">Grade</label>
-                                <input type="number" class="form-control" id="newGrade">
+                </div>
+            </div>
+            <div class="jumbotron p-1 my-1 rounded-0">
+                <div class="container mt-3">
+                    <div class="d-flex m-3">
+                        <div class="dropdown mr-1">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" id="studentDropDown"
+                                data-toggle="dropdown" data-offset="10,20">
+                                Students
+                            </button>
+                            <div class="dropdown-menu" id="individualStudentChoices"
+                                aria-labelledby="dropdownMenuOffset">
                             </div>
-                        </form>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="newGradeButton">Save changes</button>
+                    <div>
+                        <div>
+                            <h2 class="text-center">
+                                Grades for <span id="studentNameDisplay">...</span>
+                            </h2>
+                        </div>
+                        <table class="table text-center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Assignment Name</th>
+                                    <th scope="col">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody id="studentTable">
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
+        <script type="text/javascript" src="../js/individualStudent.js"></script>
 
-        <div class="container mt-3">
-            <div class="d-flex m-3">
-                <div class="dropdown mr-1">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" id="studentDropDown"
-                        data-toggle="dropdown" data-offset="10,20">
-                        Students
-                    </button>
-                    <div class="dropdown-menu" id="individualStudentChoices" aria-labelledby="dropdownMenuOffset">
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <h2 class="text-center">
-                        Grades for <span id="studentNameDisplay">...</span>
-                    </h2>
-                </div>
-                <table class="table text-center">
-                    <thead>
-                        <tr>
-                            <th scope="col">Assignment Name</th>
-                            <th scope="col">Grade</th>
-                        </tr>
-                    </thead>
-                    <tbody id="studentTable">
-                    </tbody>
-                </table>
-            </div>
-        </div>
-</div>
-
-<script type="text/javascript" src="../js/firebaseTeacher.js"></script>
-<script type="text/javascript" src="../js/individualStudent.js"></script>
-
-</body>
+    </body>
 
 
 
