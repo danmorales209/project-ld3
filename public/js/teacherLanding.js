@@ -36,7 +36,7 @@ $(document).ready(function () {
       );
 
       studentRow.append($("<td>")
-        .append($("<button>")
+        .append($("<button class='btn btn-secondary'>")
           .addClass("student-grades")
           .text("See Grades")
           .attr("sid", student.id)
