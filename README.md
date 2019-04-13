@@ -4,21 +4,18 @@ Our app provides a simple streamline user experience for teachers who need a pla
 
 ## The User Experience
 
-* Teacher logs in and gets sent to the teacher's landing page
+### Landing Page - Class Overview
+This view provides a brief overview of the current student's grades, as well as a graphical representation of the overall grade for each student.
+A link to each student's detailed grades is accessible, and will populate the student's grades when navigating to the next page.
 
-* Landing page lists all students and grade averages with a class rank chart
+### Student's Grades
+This page allows the user to select a student to view and modify all grades. This student info is automatically passed when the student is selected from the landing page.
 
-* From the nav bar the teacher can:
-  - Select the assignment page where the user can
-      add new assignments
-      update existing assignments
-    
+### View Assignments
+This page displays all the current assignments, as well as the option to modify any of the data for the assignments. From this page, the teacher can grades all students for any given assignment.
 
- * Select the grade button and go to the grades page
-   - Select an assignment and see a list of all the students and the grade the assignments
-
- * Click the All Students link on the navbar
-   - View all assignments and their grades for ONE student   
+### Grade Assignments
+This page allows the teacher to grade each student for a given assignment. The current grade for the assignment is populated when the page loads (which is default to 0 when the has not been entered yet).
 
 ### Prerequisites
 
@@ -26,51 +23,13 @@ Browser connection. This app is deployed on Heroku.
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+No installation required, the entire application is accesible through the web portal
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Bootsrap 4](https://getbootstrap.com/) - Displayig data
+* [ChartJS](https://www.chartjs.org/docs/latest/) - Display student data graphically
+* [Sequlize](http://docs.sequelizejs.com/) - ORM to manage DB requests
 
 ## Contributing
 
@@ -80,18 +39,16 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
-## Authors
+## Developers
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Dan Morales** - [danmorales209](https://github.com/danmorales209)
+* **Lindsay Campell** - [Lindca](https://github.com/Lindca)
+* **Daniel Enrico** - [thedanielenrico](https://github.com/thedanielenrico)
+* **Danton** - [DantonDD](https://github.com/DantonDD)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+* None yet - check back later!
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
