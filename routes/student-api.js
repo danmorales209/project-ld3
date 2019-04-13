@@ -11,7 +11,7 @@ module.exports = function (app) {
       res.json(data);
     });
   });
-  app.post("api/students", function (req, res) {
+  app.post("/api/students", function (req, res) {
     db.Students.create(req.body).then(function (data) {
       res.json(data);
     });
