@@ -11,6 +11,7 @@ module.exports = function (app) {
       res.json(data);
     });
   });
+  
   app.get("/api/students/:id", function (req, res) {
     db.Students.findOne(
       {
