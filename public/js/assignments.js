@@ -20,11 +20,11 @@ $(document).ready(function () {
     console.log(data);
     for (var i = 0; i < data.length; i++) {
       var newRow = $(`<tr>`);
-      newRow.append($(`<td><input id="updateName" class='form-control' value="${data[i].assignmentName}"></td>`));
-      newRow.append($(`<td><input id="updateSubject" class='form-control' value="${data[i].subjectName}"></td>`));
-      newRow.append($(`<td><input id="updateDue" class='form-control' value="${data[i].dueDate}"></td>`));
-      newRow.append($(`<td><input id="updatePoints" class='form-control' value="${data[i].maxPoints}"></td>`));
-      newRow.append($(`<button data-id="${data[i].id}" class='saveChanges btn btn-primary'>Save Changes</button>`));
+      newRow.append($(`<td><input id="updateName-${data[i].id}" class='form-control' value="${data[i].assignmentName}"></td>`));
+      newRow.append($(`<td><input id="updateSubject-${data[i].id}"" class='form-control' value="${data[i].subjectName}"></td>`));
+      newRow.append($(`<td><input id="updateDue-${data[i].id}"" class='form-control' value="${data[i].dueDate}"></td>`));
+      newRow.append($(`<td><input id="updatePoints-${data[i].id}"" class='form-control' value="${data[i].maxPoints}"></td>`));
+      newRow.append($(`<button data-assignid="${data[i].id}" class='saveChanges btn btn-primary'>Save Changes</button>`));
       newRow.append($(`<button data-id="${data[i].id}" class='grade btn btn-primary'>Grade</button>`));
       $("tbody").append(newRow);
     }
@@ -34,27 +34,33 @@ $(document).ready(function () {
       localStorage.setItem("assignID", $(this).data("id"));
       window.location.replace("/gradeAssign");
     });
-  });
-  $(document).on("click", ".saveChanges", function (event) {
-    event.preventDefault();
-    var updateAssign = {
-      assignmentName: $("#updateName").val().trim(),
-      maxPoints: $("#updatePoints").val().trim(),
-      dueDate: $("#updateDue").val().trim(),
-      subjectName: $("#updateSubject").val().trim(),
-    };
-    var id = $(this).attr('data-id');
-    console.log(id);
+    $(".saveChanges").on("click", function (event) {
+      event.preventDefault();
+      var assignment = $(this).data("assignid");
+      var name = $(`#updateName-${assignment}`).val().trim();
+      var points=$(`#updatePoints-${assignment}`).val().trim();
+      var date=$(`#updateDue-${assignment}`).val().trim();
+      var subject=$(`#updateSubject-${assignment}`).val().trim();
+      
+      var updateAssign = {
+        assignmentName: name,
+        maxPoints: points,
+        dueDate: date,
+        subjectName: subject
+      };
+      console.log(updateAssign);
+      var id = $(this).data('assignid');
+      console.log(id);
+      $.ajax({
+        method: 'PUT',
+        url: "/api/assignments/" + id,
+        data: updateAssign
+      }).then(function (data) {
+        //location.reload();
+        console.log(data);
+      })
 
-
-    $.ajax({
-      method: 'PUT',
-      url: "/api/assignments/" + id,
-      data: updateAssign
-    }).then(function (data) {
-      location.reload();
-      console.log(data);
-    })
-
+    });
   });
 });
+
