@@ -38,11 +38,20 @@ $(document).ready(function () {
 
       studentRow.append($("<td>")
         .append($("<button>")
-          .text("Push Me")
+          .addClass("student-grades")
+          .text("Student Page")
+          .attr("sid", student.id)
         )
       );
 
       $("#display-students").append(studentRow);
+    });
+
+    $(".student-grades").on("click", function (e){
+      e.preventDefault();
+      sessionStorage.setItem("sid",$(this).attr("sid"));
+      window.location.replace("/student");
+      
     });
 
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -90,47 +99,47 @@ var formatGrade = function (value) {
     letterGrade = "A+";
   }
 
-  else if ( value >= 93) {
+  else if (value >= 93) {
     letterGrade = "A";
   }
 
-  else if ( value >= 90) {
+  else if (value >= 90) {
     letterGrade = "A-";
   }
 
-  else if ( value >= 87) {
+  else if (value >= 87) {
     letterGrade = "B+";
   }
 
-  else if ( value >= 83) {
+  else if (value >= 83) {
     letterGrade = "B";
   }
 
-  else if ( value >= 80) {
+  else if (value >= 80) {
     letterGrade = "B-";
   }
 
-  else if ( value >= 77) {
+  else if (value >= 77) {
     letterGrade = "C+";
   }
 
-  else if ( value >= 73) {
+  else if (value >= 73) {
     letterGrade = "C";
   }
 
-  else if ( value >= 70) {
+  else if (value >= 70) {
     letterGrade = "C-";
   }
 
-  else if ( value >= 67) {
+  else if (value >= 67) {
     letterGrade = "D+";
   }
 
-  else if ( value >= 63) {
+  else if (value >= 63) {
     letterGrade = "D";
   }
 
-  else if ( value >= 60) {
+  else if (value >= 60) {
     letterGrade = "D-";
   }
 
