@@ -23,126 +23,129 @@
     <title>My Grade Book</title>
 </head>
 <!-- ############ Nav Bar ############ -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <h1>My Grade Book</h1>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ml-2">
-            <li class="nav-item mr-2" id="navLogin">
-                <span class="nav-link">Log in</span>
-            </li>
-            <li class="nav-item mr-2" id="navRegister">
-                <span class="nav-link">Register</span>
-            </li>
-            <li class="nav-item mr-2" id="navLogout">
-                <span class="nav-link">Log out</span>
-            </li>
-        </ul>
-        <span class="ml-auto navbar-text">
-            <h3></h3>
-        </span>
-    </div>
-</nav>
+<div class="container">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/teacher">
+            <h1>My Grade Book</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-2">
+                <li class="nav-item mr-2" id="navLogin">
+                    <span class="nav-link">Log in</span>
+                </li>
+                <li class="nav-item mr-2" id="navRegister">
+                    <span class="nav-link">Register</span>
+                </li>
+                <li class="nav-item mr-2" id="navLogout">
+                    <span class="nav-link">Log out</span>
+                </li>
+            </ul>
+            <span class="ml-auto navbar-text">
+                <h3></h3>
+            </span>
+        </div>
+    </nav>
 
-<body>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1" class="active"></li>
-            <li data-target="#carousel" data-slide-to="2" class="active"></li>
-            <li data-target="#carousel" data-slide-to="3" class="active"></li>
-        </ol>
-        <div class="carousel-inner" data-interval="5000">
-            <div class="carousel-item active">
-                <img src="../images/a-teacher.jpg" class="d-block w-100" alt="Slide 1">
-            </div>
-            <div class="carousel-item" data-interval="5000">
-                <img src="../images/child.jpg" class="d-block w-100" alt="Slide 2">
-            </div>
-            <div class="carousel-item" data-interval="5000">
-                <img src="../images/kids-and-teacher.jpg" class="d-block w-100" alt="Slide 3">
-            </div>
-            <div class="carousel-item" data-interval="5000">
-                <img src="../images/teach.jpg" class="d-block w-100" alt="Slide 4">
+    <body>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel" data-slide-to="1" class="active"></li>
+                <li data-target="#carousel" data-slide-to="2" class="active"></li>
+                <li data-target="#carousel" data-slide-to="3" class="active"></li>
+            </ol>
+            <div class="carousel-inner" data-interval="5000">
+                <div class="carousel-item active">
+                    <img src="../images/a-teacher.jpg" class="d-block w-100" alt="Slide 1">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img src="../images/child.jpg" class="d-block w-100" alt="Slide 2">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img src="../images/kids-and-teacher.jpg" class="d-block w-100" alt="Slide 3">
+                </div>
+                <div class="carousel-item" data-interval="5000">
+                    <img src="../images/teach.jpg" class="d-block w-100" alt="Slide 4">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="jumbotron jumbotron1 jumbotron-fluid" id="registerDiv">
-        <div class="container">
-            <form id="register">
-                <div class="row">
-                    <h1>Register</h1>
-                </div>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control email" id="register-email"
-                                placeholder="Enter Email">
+        <div class="jumbotron jumbotron1 jumbotron-fluid" id="registerDiv">
+            <div class="container">
+                <form id="register">
+                    <div class="row">
+                        <h1>Register</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control email" id="register-email"
+                                    placeholder="Enter Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control password" id="register-password"
+                                    placeholder="Enter Password">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control password" id="register-password"
-                                placeholder="Enter Password">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="firstName" class="form-control firstName" placeholder="Enter First Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="lastName" class="form-control lastName" placeholder="Enter Last Name">
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="firstName" class="form-control firstName" placeholder="Enter First Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="lastName" class="form-control lastName" placeholder="Enter Last Name">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm">
-                        <h1>Please log in once you Register</h1>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="jumbotron jumbotron2 jumbotron-fluid" id="loginDiv">
-        <div class="container">
-            <form id="login">
-                <div class="row">
-                    <h1>Log In</h1>
-                </div>
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8">
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control email" id="login-email" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control password" id="login-password"
-                                placeholder="Enter Password">
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm">
+                            <h1>Please log in once you Register</h1>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3"></div>
-                    <div class="col-sm-6">
-                        <button type="submit" class="btn btn-primary submit"><a href="#">Log In</a></button>
-                    </div>
-                </div>
-                <div class="col-sm-3"></div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
-    <script type="text/javascript" src="../js/firebaseTeacher.js"></script>
+        <div class="jumbotron jumbotron2 jumbotron-fluid" id="loginDiv">
+            <div class="container">
+                <form id="login">
+                    <div class="row">
+                        <h1>Log In</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" class="form-control email" id="login-email"
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control password" id="login-password"
+                                    placeholder="Enter Password">
+                            </div>
+                            <div class="col-sm-2"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn btn-primary submit"><a href="#">Log In</a></button>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </form>
+            </div>
+        </div>
+</div>
+<script type="text/javascript" src="../js/firebaseTeacher.js"></script>
 </body>
 
 </html>
