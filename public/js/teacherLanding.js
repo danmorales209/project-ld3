@@ -9,7 +9,6 @@ $(document).ready(function () {
 
       if (student.Grades.length > 0) {
         let totalScore = student.Grades.length;
-        console.log(totalScore)
 
         overallGrade.push(student.Grades.reduce((sum, grade) => {
           return sum + (grade.gradeValue / grade.Assignment.maxPoints);
@@ -39,7 +38,7 @@ $(document).ready(function () {
       studentRow.append($("<td>")
         .append($("<button>")
           .addClass("student-grades")
-          .text("Student Page")
+          .text("See Grades")
           .attr("sid", student.id)
         )
       );
